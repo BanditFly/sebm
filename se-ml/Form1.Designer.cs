@@ -49,6 +49,16 @@
             this.doorcounter = new System.Windows.Forms.Label();
             this.cryocounter = new System.Windows.Forms.Label();
             this.lcdcounter = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.backupPath = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.smallShipBox = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.serverversion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.blueprintThumb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +109,7 @@
             "LargeBlockSmallContainer"});
             this.replaceWith.Location = new System.Drawing.Point(12, 64);
             this.replaceWith.Name = "replaceWith";
-            this.replaceWith.Size = new System.Drawing.Size(191, 364);
+            this.replaceWith.Size = new System.Drawing.Size(191, 334);
             this.replaceWith.TabIndex = 4;
             // 
             // label3
@@ -116,7 +126,7 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(209, 25);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(194, 424);
+            this.checkedListBox1.Size = new System.Drawing.Size(194, 394);
             this.checkedListBox1.TabIndex = 7;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
@@ -255,11 +265,116 @@
             this.lcdcounter.TabIndex = 22;
             this.lcdcounter.Text = "LCD:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(209, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Backup";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(615, 431);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(193, 23);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Restore";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Location = new System.Drawing.Point(615, 48);
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(193, 379);
+            this.checkedListBox2.TabIndex = 25;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(612, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Backed up blueprints";
+            // 
+            // backupPath
+            // 
+            this.backupPath.Location = new System.Drawing.Point(615, 25);
+            this.backupPath.Name = "backupPath";
+            this.backupPath.Size = new System.Drawing.Size(143, 20);
+            this.backupPath.TabIndex = 27;
+            this.backupPath.Text = "Path to blueprint backup folder";
+            this.backupPath.TextChanged += new System.EventHandler(this.backupPath_TextChanged);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(764, 25);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(44, 20);
+            this.button3.TabIndex = 28;
+            this.button3.Text = "Load backups";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // smallShipBox
+            // 
+            this.smallShipBox.AutoSize = true;
+            this.smallShipBox.Location = new System.Drawing.Point(12, 410);
+            this.smallShipBox.Name = "smallShipBox";
+            this.smallShipBox.Size = new System.Drawing.Size(73, 17);
+            this.smallShipBox.TabIndex = 29;
+            this.smallShipBox.Text = "Small ship";
+            this.smallShipBox.UseVisualStyleBackColor = true;
+            this.smallShipBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(410, 431);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(199, 23);
+            this.button4.TabIndex = 30;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(412, 385);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "This version: 1.0.3";
+            // 
+            // serverversion
+            // 
+            this.serverversion.AutoSize = true;
+            this.serverversion.Location = new System.Drawing.Point(412, 406);
+            this.serverversion.Name = "serverversion";
+            this.serverversion.Size = new System.Drawing.Size(92, 13);
+            this.serverversion.TabIndex = 32;
+            this.serverversion.Text = "Version on server:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 466);
+            this.ClientSize = new System.Drawing.Size(816, 466);
+            this.Controls.Add(this.serverversion);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.smallShipBox);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.backupPath);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.checkedListBox2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lcdcounter);
             this.Controls.Add(this.cryocounter);
             this.Controls.Add(this.doorcounter);
@@ -281,6 +396,7 @@
             this.Controls.Add(this.Block);
             this.Controls.Add(this.replaceButton);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "SE-ML";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -313,6 +429,16 @@
         private System.Windows.Forms.Label doorcounter;
         private System.Windows.Forms.Label cryocounter;
         private System.Windows.Forms.Label lcdcounter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox backupPath;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox smallShipBox;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label serverversion;
     }
 }
 
