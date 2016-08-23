@@ -26,6 +26,13 @@ namespace se_ml
         int cryocount;
         int lcdcount;
 
+
+        private string blocka;
+        private string blockb;
+        private string blockc;
+
+        string[] analyzedBlueprint;
+
         string[] version;
 
         public Form1()
@@ -35,14 +42,40 @@ namespace se_ml
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc", File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc").Replace(Block.Text, replaceWith.Text));
+            //File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc", File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc").Replace(Block.Text, replaceWith.SelectedItem.ToString()));
+
+            string[] blueprint = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc");
+
+            for (int i = 0; i < blueprint.Length; i++)
+            {
+                if (blueprint[i].Contains(blueprintSub.SelectedItem.ToString()))
+                {
+                    int x = i; x--;
+                    Console.WriteLine(x + i + blueprint[i]);
+                    Console.WriteLine(blueprintSub.SelectedItem.ToString() + "-" + blocks.SelectedItem.ToString());
+
+                    string bluex = blueprint[x].Replace(blueprintBlocks.SelectedItem.ToString(), blocktype.SelectedItem.ToString());
+                    string bluei = blueprint[i].Replace(blueprintSub.SelectedItem.ToString(), blocks.SelectedItem.ToString());
+
+                    blueprint[x] = bluex;
+                    blueprint[i] = bluei;
+
+                    File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc", File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc").Replace(blueprintBlocks.SelectedItem.ToString(), blocktype.SelectedItem.ToString()));
+                    File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc", File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc").Replace(blueprintSub.SelectedItem.ToString(), blocks.SelectedItem.ToString()));
+
+                }
+            }
+
             MessageBox.Show("Replaced Blocks!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            if(File.Exists("semlupdater.exe")) { File.Delete("semlupdater.exe"); }
+            smallShipBox.CheckState = CheckState.Checked;
+            smallShipBox.CheckState = CheckState.Unchecked;
+
+            if (File.Exists("semlupdater.exe")) { File.Delete("semlupdater.exe"); }
 
             String[] allfiles = System.IO.Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local", "*.*", System.IO.SearchOption.AllDirectories);
 
@@ -82,9 +115,6 @@ namespace se_ml
             Console.WriteLine("Selected blueprint.");
             string[] blueprint = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc");
             Console.WriteLine(blueprint[22]);
-            if (blueprint[22].Contains("<GridSizeEnum>Large</GridSizeEnum>")) { gridsize.Text = "Gridsize: Large"; }
-            else
-            if (blueprint[22].Contains("<GridSizeEnum>Small</GridSizeEnum>")) { gridsize.Text = "Gridsize: Small"; }
 
             for (int i = 0; i < blueprint.Length; i++)
             {
@@ -94,11 +124,13 @@ namespace se_ml
                 if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type=\"MyObjectBuilder_TimerBlock\">")) { timercount++; }
                 if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type=\"MyObjectBuilder_ExtendedPistonBase\">")) { pistonount++; }
                 if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type=\"MyObjectBuilder_BatteryBlock\">")) { batterycount++; }
-
                 if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type=\"MyObjectBuilder_Cockpit\">")) { cockpitcount++; }
                 if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type=\"MyObjectBuilder_Door\">")) { doorcount++; }
                 if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type=\"MyObjectBuilder_CryoChamber\">")) { cryocount++; }
                 if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type=\"MyObjectBuilder_TextPanel\">")) { lcdcount++; }
+                if (blueprint[i].Contains("<GridSizeEnum>Large</GridSizeEnum>")) { gridsize.Text = "Gridsize: Large"; }
+                if (blueprint[i].Contains("<GridSizeEnum>Small</GridSizeEnum>")) { gridsize.Text = "Gridsize: Small"; }
+
             }
 
             blockcounter.Text = "Blockcount: " + blockcount.ToString(); //Blocks
@@ -141,10 +173,6 @@ namespace se_ml
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (backupPath.Text != "")
-            {
-                tools.copyDirectory(backupPath.Text + "\\" + checkedListBox2.SelectedItem.ToString() + "\\", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox2.SelectedItem.ToString() + "\\");
-            } else MessageBox.Show("Enter a backup path!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void backupPath_TextChanged(object sender, EventArgs e)
@@ -165,23 +193,35 @@ namespace se_ml
         {
             if(smallShipBox.CheckState == CheckState.Unchecked)
             {
-                replaceWith.Items.Clear();
+                blocktype.Items.Clear();
                 tools.downlaodFile("http://s.thatseliyt.de/", "largeBlocks.txt", "largeBlocks.txt");
                 string[] largeBlocks = File.ReadAllLines("largeBlocks.txt");
                 File.Delete("largeBlocks.txt");
                 for (int i = 0; i < largeBlocks.Length; i++)
                 {
-                    replaceWith.Items.Add(largeBlocks[i]);
+                    string[] btype; btype = largeBlocks[i].Split('|');
+
+
+                    if (!blocktype.Items.Contains(btype[0]))
+                    {
+                        blocktype.Items.Add(btype[0]);
+                    }
                 }
             } else if(smallShipBox.CheckState == CheckState.Checked)
             {
-                replaceWith.Items.Clear();
+                blocktype.Items.Clear();
                 tools.downlaodFile("http://s.thatseliyt.de/", "smallBlocks.txt", "smallBlocks.txt");
                 string[] smallBlocks = File.ReadAllLines("smallBlocks.txt");
                 File.Delete("smallBlocks.txt");
                 for (int i = 0; i < smallBlocks.Length; i++)
                 {
-                    replaceWith.Items.Add(smallBlocks[i]);
+                    string[] btype; btype = smallBlocks[i].Split('|');
+
+
+                    if (!blocktype.Items.Contains(btype[0]))
+                    {
+                        blocktype.Items.Add(btype[0]);
+                    }
                 }
             }
         }
@@ -190,9 +230,101 @@ namespace se_ml
         {
 
             tools.downlaodFile("http://s.thatseliyt.de/", "Updater.exe", "semlupdater.exe");
-            MessageBox.Show("Updatw will start now!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Update will start now!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             System.Diagnostics.Process.Start("semlupdater.exe");
             this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (backupPath.Text != "")
+            {
+                tools.copyDirectory(backupPath.Text + "\\" + checkedListBox2.SelectedItem.ToString() + "\\", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox2.SelectedItem.ToString() + "\\");
+            }
+            else MessageBox.Show("Enter a backup path!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            blueprintBlocks.Items.Clear();
+
+            string[] blueprintblocks;
+
+            string[] blueprint = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc");
+            for (int i = 0; i < blueprint.Length; i++)
+            {
+                if(blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type="))
+                {
+                    blocka = blueprint[i].Replace("            <MyObjectBuilder_CubeBlock xsi:type=" + '\u0022', "");
+                    blockb = blocka.Replace('\u0022' + ">", "|");
+                    int x = i; x++;
+                    blocka = blueprint[x].Replace("              <SubtypeName>", "");
+                    blockc = blockb + blocka.Replace("</SubtypeName>", "");
+
+                    
+
+                    if (!blueprintBlocks.Items.Contains(blockc.Split('|')[0]))
+                    {
+                        blueprintBlocks.Items.Add(blockc.Split('|')[0]);
+
+                    }
+                }
+            }
+
+        }
+
+        private void replaceWith_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            blocks.Items.Clear();
+            tools.downlaodFile("http://s.thatseliyt.de/", "largeBlocks.txt", "largeBlocks.txt");
+            string[] largeBlocks = File.ReadAllLines("largeBlocks.txt");
+            File.Delete("largeBlocks.txt");
+
+                if (smallShipBox.CheckState == CheckState.Unchecked)
+                {
+                    for (int x = 0; x < largeBlocks.Length; x++)
+                    {   
+                        string[] btype; btype = largeBlocks[x].Split('|');
+                        
+                        if(btype[0].Contains(blocktype.SelectedItem.ToString()))
+                        {
+                        if (!blocks.Items.Contains(btype[1]))
+                        {
+                            blocks.Items.Add(btype[1]);
+                        }
+                    }
+                       
+                    }
+                
+            }
+        }
+
+        private void blueprintBlocks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            blueprintSub.Items.Clear();
+
+            string[] blueprint = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc");
+            for (int i = 0; i < blueprint.Length; i++)
+            {
+                if (blueprint[i].Contains("<MyObjectBuilder_CubeBlock xsi:type="))
+                {
+                    blocka = blueprint[i].Replace("            <MyObjectBuilder_CubeBlock xsi:type=" + '\u0022', "");
+                    blockb = blocka.Replace('\u0022' + ">", "|");
+                    int x = i; x++;
+                    blocka = blueprint[x].Replace("              <SubtypeName>", "");
+                    blockc = blockb + blocka.Replace("</SubtypeName>", "");
+
+
+
+                    if (blueprintBlocks.SelectedItem.ToString() == blockc.Split('|')[0])
+                    {
+                        blueprintSub.Items.Add(blockc.Split('|')[1]);
+                    }
+                }
+            }
+
         }
     }
 }
