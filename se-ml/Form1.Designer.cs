@@ -355,7 +355,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button replaceButton;
         private System.Windows.Forms.CheckedListBox blocktype;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.PictureBox blueprintThumb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -378,6 +377,7 @@
         private System.Windows.Forms.CheckedListBox blocks;
         private System.Windows.Forms.CheckedListBox blueprintSub;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 
