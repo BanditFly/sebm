@@ -38,17 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.gridsize = new System.Windows.Forms.Label();
             this.blockcounter = new System.Windows.Forms.Label();
-            this.antennacounter = new System.Windows.Forms.Label();
-            this.remotecounter = new System.Windows.Forms.Label();
-            this.timercounter = new System.Windows.Forms.Label();
-            this.pistoncounter = new System.Windows.Forms.Label();
-            this.batterycounter = new System.Windows.Forms.Label();
-            this.cockpitcounter = new System.Windows.Forms.Label();
-            this.doorcounter = new System.Windows.Forms.Label();
-            this.cryocounter = new System.Windows.Forms.Label();
-            this.lcdcounter = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.backupPath = new System.Windows.Forms.TextBox();
@@ -63,6 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.blocks = new System.Windows.Forms.CheckedListBox();
             this.blueprintSub = new System.Windows.Forms.CheckedListBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.blueprintThumb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,87 +163,6 @@
             this.blockcounter.TabIndex = 13;
             this.blockcounter.Text = "Blockcount:";
             // 
-            // antennacounter
-            // 
-            this.antennacounter.AutoSize = true;
-            this.antennacounter.Location = new System.Drawing.Point(218, 194);
-            this.antennacounter.Name = "antennacounter";
-            this.antennacounter.Size = new System.Drawing.Size(55, 13);
-            this.antennacounter.TabIndex = 14;
-            this.antennacounter.Text = "Antennas:";
-            // 
-            // remotecounter
-            // 
-            this.remotecounter.AutoSize = true;
-            this.remotecounter.Location = new System.Drawing.Point(217, 207);
-            this.remotecounter.Name = "remotecounter";
-            this.remotecounter.Size = new System.Drawing.Size(47, 13);
-            this.remotecounter.TabIndex = 15;
-            this.remotecounter.Text = "Remote:";
-            // 
-            // timercounter
-            // 
-            this.timercounter.AutoSize = true;
-            this.timercounter.Location = new System.Drawing.Point(217, 220);
-            this.timercounter.Name = "timercounter";
-            this.timercounter.Size = new System.Drawing.Size(36, 13);
-            this.timercounter.TabIndex = 16;
-            this.timercounter.Text = "Timer:";
-            // 
-            // pistoncounter
-            // 
-            this.pistoncounter.AutoSize = true;
-            this.pistoncounter.Location = new System.Drawing.Point(218, 233);
-            this.pistoncounter.Name = "pistoncounter";
-            this.pistoncounter.Size = new System.Drawing.Size(39, 13);
-            this.pistoncounter.TabIndex = 17;
-            this.pistoncounter.Text = "Piston:";
-            // 
-            // batterycounter
-            // 
-            this.batterycounter.AutoSize = true;
-            this.batterycounter.Location = new System.Drawing.Point(218, 246);
-            this.batterycounter.Name = "batterycounter";
-            this.batterycounter.Size = new System.Drawing.Size(43, 13);
-            this.batterycounter.TabIndex = 18;
-            this.batterycounter.Text = "Battery:";
-            // 
-            // cockpitcounter
-            // 
-            this.cockpitcounter.AutoSize = true;
-            this.cockpitcounter.Location = new System.Drawing.Point(217, 259);
-            this.cockpitcounter.Name = "cockpitcounter";
-            this.cockpitcounter.Size = new System.Drawing.Size(46, 13);
-            this.cockpitcounter.TabIndex = 19;
-            this.cockpitcounter.Text = "Cockpit:";
-            // 
-            // doorcounter
-            // 
-            this.doorcounter.AutoSize = true;
-            this.doorcounter.Location = new System.Drawing.Point(217, 272);
-            this.doorcounter.Name = "doorcounter";
-            this.doorcounter.Size = new System.Drawing.Size(33, 13);
-            this.doorcounter.TabIndex = 20;
-            this.doorcounter.Text = "Door:";
-            // 
-            // cryocounter
-            // 
-            this.cryocounter.AutoSize = true;
-            this.cryocounter.Location = new System.Drawing.Point(218, 285);
-            this.cryocounter.Name = "cryocounter";
-            this.cryocounter.Size = new System.Drawing.Size(72, 13);
-            this.cryocounter.TabIndex = 21;
-            this.cryocounter.Text = "Cryochamber:";
-            // 
-            // lcdcounter
-            // 
-            this.lcdcounter.AutoSize = true;
-            this.lcdcounter.Location = new System.Drawing.Point(218, 298);
-            this.lcdcounter.Name = "lcdcounter";
-            this.lcdcounter.Size = new System.Drawing.Size(31, 13);
-            this.lcdcounter.TabIndex = 22;
-            this.lcdcounter.Text = "LCD:";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(15, 431);
@@ -262,16 +172,6 @@
             this.button1.Text = "Backup";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(496, 893);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Restore";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkedListBox2
             // 
@@ -373,7 +273,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(193, 23);
             this.button6.TabIndex = 35;
-            this.button6.Text = "button6";
+            this.button6.Text = "Restore blueprint";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -402,11 +302,19 @@
             this.blueprintSub.Size = new System.Drawing.Size(193, 184);
             this.blueprintSub.TabIndex = 38;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 470);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(1000, 24);
+            this.progressBar1.TabIndex = 39;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 467);
+            this.ClientSize = new System.Drawing.Size(1020, 498);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.blueprintSub);
             this.Controls.Add(this.blocks);
             this.Controls.Add(this.label8);
@@ -421,17 +329,7 @@
             this.Controls.Add(this.backupPath);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lcdcounter);
-            this.Controls.Add(this.cryocounter);
-            this.Controls.Add(this.doorcounter);
-            this.Controls.Add(this.cockpitcounter);
-            this.Controls.Add(this.batterycounter);
-            this.Controls.Add(this.pistoncounter);
-            this.Controls.Add(this.timercounter);
-            this.Controls.Add(this.remotecounter);
-            this.Controls.Add(this.antennacounter);
             this.Controls.Add(this.blockcounter);
             this.Controls.Add(this.gridsize);
             this.Controls.Add(this.label5);
@@ -464,17 +362,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label gridsize;
         private System.Windows.Forms.Label blockcounter;
-        private System.Windows.Forms.Label antennacounter;
-        private System.Windows.Forms.Label remotecounter;
-        private System.Windows.Forms.Label timercounter;
-        private System.Windows.Forms.Label pistoncounter;
-        private System.Windows.Forms.Label batterycounter;
-        private System.Windows.Forms.Label cockpitcounter;
-        private System.Windows.Forms.Label doorcounter;
-        private System.Windows.Forms.Label cryocounter;
-        private System.Windows.Forms.Label lcdcounter;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox backupPath;
@@ -489,6 +377,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckedListBox blocks;
         private System.Windows.Forms.CheckedListBox blueprintSub;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
