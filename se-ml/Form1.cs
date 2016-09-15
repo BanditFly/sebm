@@ -85,8 +85,11 @@ namespace se_ml
             serverversion.Text = "Server version: " + version[0];
             File.Delete("semlversion.txt");
 
+            if(Int32.Parse(localversion.Text.Replace("Local version: ", "").Replace(".", "")) < Int32.Parse(serverversion.Text.Replace("Server version: ", "").Replace(".", ""))) { MessageBox.Show("There is an update!" + Environment.NewLine + "Local version: " + localversion.Text.Replace("Local version: ", "") + Environment.NewLine + "Server version: " + serverversion.Text.Replace("Server version: ", ""), "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
         }
 
+        //
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             blockCounter bc = new blockCounter();

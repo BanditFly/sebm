@@ -45,7 +45,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.smallShipBox = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.localversion = new System.Windows.Forms.Label();
             this.serverversion = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.blueprintBlocks = new System.Windows.Forms.CheckedListBox();
@@ -230,14 +230,14 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label7
+            // localversion
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(223, 385);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 13);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "This version: 1.2.0";
+            this.localversion.AutoSize = true;
+            this.localversion.Location = new System.Drawing.Point(223, 385);
+            this.localversion.Name = "localversion";
+            this.localversion.Size = new System.Drawing.Size(100, 13);
+            this.localversion.TabIndex = 31;
+            this.localversion.Text = "Local version: 1.0.6";
             // 
             // serverversion
             // 
@@ -322,7 +322,7 @@
             this.Controls.Add(this.blueprintBlocks);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.serverversion);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.localversion);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.smallShipBox);
             this.Controls.Add(this.button3);
@@ -369,7 +369,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox smallShipBox;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label localversion;
         private System.Windows.Forms.Label serverversion;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.CheckedListBox blueprintBlocks;
