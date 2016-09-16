@@ -284,7 +284,7 @@ namespace sebm
                        
                     }
                 
-                }
+                } else
 
             if (smallShipBox.CheckState == CheckState.Checked)
             {
@@ -336,10 +336,37 @@ namespace sebm
 
         }
 
-        private void backupPath_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            if(backupPath.Text.Contains("Path to")) { backupPath.Text = ""; }
-        }
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                backupPath.Text = folderBrowserDialog1.SelectedPath;
+            }
 
+            if (backupPath.Text != "" || backupPath.Text != "Path to blueprint backup folder")
+            {
+                try
+                {
+                    String[] allfiles = System.IO.Directory.GetFiles(backupPath.Text, "*.*", System.IO.SearchOption.AllDirectories);
+
+                    foreach (var file in allfiles)
+                    {
+                        FileInfo info = new FileInfo(file);
+                        Console.WriteLine(info.Name);
+                        if (!checkedListBox2.Items.Contains(info.Directory.ToString().Replace(backupPath.Text + "\\", "")))
+                        {
+                            checkedListBox2.Items.Add(info.Directory.ToString().Replace(backupPath.Text + "\\", ""));
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Couldn't find path!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("Enter a backup path!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
     }
 }

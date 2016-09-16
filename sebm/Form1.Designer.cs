@@ -42,7 +42,6 @@
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.backupPath = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.smallShipBox = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.localversion = new System.Windows.Forms.Label();
@@ -54,6 +53,8 @@
             this.blocks = new System.Windows.Forms.CheckedListBox();
             this.blueprintSub = new System.Windows.Forms.CheckedListBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.blueprintThumb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,20 +195,10 @@
             // 
             this.backupPath.Location = new System.Drawing.Point(819, 22);
             this.backupPath.Name = "backupPath";
-            this.backupPath.Size = new System.Drawing.Size(143, 20);
+            this.backupPath.Size = new System.Drawing.Size(117, 20);
             this.backupPath.TabIndex = 27;
-            this.backupPath.Text = "Path to blueprint backup folder";
+            this.backupPath.Text = "Path";
             this.backupPath.TextChanged += new System.EventHandler(this.backupPath_TextChanged);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(967, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(44, 20);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Load backups";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // smallShipBox
             // 
@@ -312,11 +303,22 @@
             this.progressBar1.Size = new System.Drawing.Size(1000, 24);
             this.progressBar1.TabIndex = 39;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(942, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(66, 20);
+            this.button2.TabIndex = 40;
+            this.button2.Text = "Browse";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 496);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.blueprintSub);
             this.Controls.Add(this.blocks);
@@ -328,7 +330,6 @@
             this.Controls.Add(this.localversion);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.smallShipBox);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.backupPath);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.checkedListBox2);
@@ -368,7 +369,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox backupPath;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox smallShipBox;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label localversion;
@@ -381,6 +381,8 @@
         private System.Windows.Forms.CheckedListBox blueprintSub;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
