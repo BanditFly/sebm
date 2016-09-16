@@ -46,3 +46,8 @@ If you want to modify the source code and make your own version, you have to do 
 2. Don't say it's your own creation
 3. Have fun ^^
 4. (Optional) Message me :)
+5. 
+
+
+###Download:
+You can find the newest version under the 'versions' folder.
