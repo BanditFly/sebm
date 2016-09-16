@@ -212,11 +212,14 @@
             // smallShipBox
             // 
             this.smallShipBox.AutoSize = true;
+            this.smallShipBox.Checked = true;
+            this.smallShipBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.smallShipBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smallShipBox.Location = new System.Drawing.Point(622, 407);
             this.smallShipBox.Name = "smallShipBox";
-            this.smallShipBox.Size = new System.Drawing.Size(73, 17);
+            this.smallShipBox.Size = new System.Drawing.Size(191, 16);
             this.smallShipBox.TabIndex = 29;
-            this.smallShipBox.Text = "Small ship";
+            this.smallShipBox.Text = "Small ship (Downloads new defenitions!)";
             this.smallShipBox.UseVisualStyleBackColor = true;
             this.smallShipBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 

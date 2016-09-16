@@ -19,6 +19,8 @@ namespace sebm
         private string blockb;
         private string blockc;
 
+        serverinfo si = new serverinfo();
+
         string[] version;
 
         public Form1()
@@ -31,8 +33,6 @@ namespace sebm
 
             try
             {
-
-                //File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc", File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc").Replace(Block.Text, replaceWith.SelectedItem.ToString()));
 
                 string[] blueprint = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\" + checkedListBox1.SelectedItem.ToString() + "\\bp.sbc");
 
@@ -70,9 +70,10 @@ namespace sebm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            smallShipBox.CheckState = CheckState.Checked;
+            //Improove this!!!
             smallShipBox.CheckState = CheckState.Unchecked;
+
+           
 
             if (File.Exists("semlupdater.exe")) { File.Delete("semlupdater.exe"); }
 
@@ -87,17 +88,12 @@ namespace sebm
                     checkedListBox1.Items.Add(info.Directory.ToString().Replace(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\", ""));
                 }
             }
-
-            tools.downlaodFile("http://s.thatseliyt.de/", "semlversion.txt", "semlversion.txt");
-            version = File.ReadAllLines("semlversion.txt");
-            serverversion.Text = "Server version: " + version[0];
-            File.Delete("semlversion.txt");
+            serverversion.Text = si.getsebmversion();
 
             if(Int32.Parse(localversion.Text.Replace("Local version: ", "").Replace(".", "")) < Int32.Parse(serverversion.Text.Replace("Server version: ", "").Replace(".", ""))) { MessageBox.Show("There is an update!" + Environment.NewLine + "Local version: " + localversion.Text.Replace("Local version: ", "") + Environment.NewLine + "Server version: " + serverversion.Text.Replace("Server version: ", ""), "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
         }
 
-        //
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             blockCounter bc = new blockCounter();
@@ -168,9 +164,7 @@ namespace sebm
             if(smallShipBox.CheckState == CheckState.Unchecked)
             {
                 blocktype.Items.Clear();
-                tools.downlaodFile("http://s.thatseliyt.de/", "largeBlocks.txt", "largeBlocks.txt");
-                string[] largeBlocks = File.ReadAllLines("largeBlocks.txt");
-                File.Delete("largeBlocks.txt");
+                string[] largeBlocks = si.getLargeBlockDef();
                 for (int i = 0; i < largeBlocks.Length; i++)
                 {
                     string[] btype; btype = largeBlocks[i].Split('|');
@@ -184,9 +178,7 @@ namespace sebm
             } else if(smallShipBox.CheckState == CheckState.Checked)
             {
                 blocktype.Items.Clear();
-                tools.downlaodFile("http://s.thatseliyt.de/", "smallBlocks.txt", "smallBlocks.txt");
-                string[] smallBlocks = File.ReadAllLines("smallBlocks.txt");
-                File.Delete("smallBlocks.txt");
+                string[] smallBlocks = si.getSmallBlockDef();
                 for (int i = 0; i < smallBlocks.Length; i++)
                 {
                     string[] btype; btype = smallBlocks[i].Split('|');
@@ -233,8 +225,6 @@ namespace sebm
 
                 blueprintBlocks.Items.Clear();
 
-                string[] blueprintblocks;
-
                 try
                 {
 
@@ -253,7 +243,6 @@ namespace sebm
 
                             if (!blueprintBlocks.Items.Contains(blockc.Split('|')[0]))
                             {
-                                //File.WriteAllText("largeblocksdata.txt", File.ReadAllText("largeblocksdata.txt") + blockc + Environment.NewLine);
                                 blueprintBlocks.Items.Add(blockc.Split('|')[0]);
 
                             }
@@ -271,18 +260,13 @@ namespace sebm
 
         }
 
-        //
         private void replaceWith_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             blocks.Items.Clear();
-            tools.downlaodFile("http://s.thatseliyt.de/", "largeBlocks.txt", "largeBlocks.txt");
-            string[] largeBlocks = File.ReadAllLines("largeBlocks.txt");
-            File.Delete("largeBlocks.txt");
+            string[] largeBlocks = si.getLargeBlockDef();
 
-            tools.downlaodFile("http://s.thatseliyt.de/", "smallBlocks.txt", "smallBlocks.txt");
-            string[] smallBlocks = File.ReadAllLines("smallBlocks.txt");
-            File.Delete("smallBlocks.txt");
+            string[] smallBlocks = si.getSmallBlockDef();
 
             if (smallShipBox.CheckState == CheckState.Unchecked)
                 {
