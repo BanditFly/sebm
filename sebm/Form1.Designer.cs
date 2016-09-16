@@ -1,4 +1,4 @@
-﻿namespace se_ml
+﻿namespace sebm
 {
     partial class Form1
     {
@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(625, 9);
+            this.label1.Location = new System.Drawing.Point(622, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             // replaceButton
             // 
-            this.replaceButton.Location = new System.Drawing.Point(625, 431);
+            this.replaceButton.Location = new System.Drawing.Point(622, 428);
             this.replaceButton.Name = "replaceButton";
             this.replaceButton.Size = new System.Drawing.Size(191, 23);
             this.replaceButton.TabIndex = 2;
@@ -94,7 +94,7 @@
             "LargeBlockSlideDoor",
             "LargeBlockGyro",
             "LargeBlockSmallContainer"});
-            this.blocktype.Location = new System.Drawing.Point(625, 25);
+            this.blocktype.Location = new System.Drawing.Point(622, 22);
             this.blocktype.Name = "blocktype";
             this.blocktype.Size = new System.Drawing.Size(191, 214);
             this.blocktype.TabIndex = 4;
@@ -103,7 +103,7 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(15, 25);
+            this.checkedListBox1.Location = new System.Drawing.Point(12, 22);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(194, 394);
             this.checkedListBox1.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             // blueprintThumb
             // 
-            this.blueprintThumb.Location = new System.Drawing.Point(220, 25);
+            this.blueprintThumb.Location = new System.Drawing.Point(217, 22);
             this.blueprintThumb.Name = "blueprintThumb";
             this.blueprintThumb.Size = new System.Drawing.Size(200, 112);
             this.blueprintThumb.TabIndex = 8;
@@ -120,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(9, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 9;
@@ -129,7 +129,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 9);
+            this.label4.Location = new System.Drawing.Point(214, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 10;
@@ -139,7 +139,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(217, 144);
+            this.label5.Location = new System.Drawing.Point(214, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 24);
             this.label5.TabIndex = 11;
@@ -148,7 +148,7 @@
             // gridsize
             // 
             this.gridsize.AutoSize = true;
-            this.gridsize.Location = new System.Drawing.Point(217, 168);
+            this.gridsize.Location = new System.Drawing.Point(214, 165);
             this.gridsize.Name = "gridsize";
             this.gridsize.Size = new System.Drawing.Size(47, 13);
             this.gridsize.TabIndex = 12;
@@ -157,7 +157,7 @@
             // blockcounter
             // 
             this.blockcounter.AutoSize = true;
-            this.blockcounter.Location = new System.Drawing.Point(217, 181);
+            this.blockcounter.Location = new System.Drawing.Point(214, 178);
             this.blockcounter.Name = "blockcounter";
             this.blockcounter.Size = new System.Drawing.Size(64, 13);
             this.blockcounter.TabIndex = 13;
@@ -165,7 +165,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 431);
+            this.button1.Location = new System.Drawing.Point(12, 428);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 23);
             this.button1.TabIndex = 23;
@@ -176,7 +176,7 @@
             // checkedListBox2
             // 
             this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(822, 48);
+            this.checkedListBox2.Location = new System.Drawing.Point(819, 45);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(193, 379);
             this.checkedListBox2.TabIndex = 25;
@@ -184,7 +184,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(819, 9);
+            this.label6.Location = new System.Drawing.Point(816, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 13);
             this.label6.TabIndex = 26;
@@ -192,7 +192,7 @@
             // 
             // backupPath
             // 
-            this.backupPath.Location = new System.Drawing.Point(822, 25);
+            this.backupPath.Location = new System.Drawing.Point(819, 22);
             this.backupPath.Name = "backupPath";
             this.backupPath.Size = new System.Drawing.Size(143, 20);
             this.backupPath.TabIndex = 27;
@@ -201,7 +201,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(971, 25);
+            this.button3.Location = new System.Drawing.Point(967, 34);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(44, 20);
             this.button3.TabIndex = 28;
@@ -212,7 +212,7 @@
             // smallShipBox
             // 
             this.smallShipBox.AutoSize = true;
-            this.smallShipBox.Location = new System.Drawing.Point(625, 410);
+            this.smallShipBox.Location = new System.Drawing.Point(622, 407);
             this.smallShipBox.Name = "smallShipBox";
             this.smallShipBox.Size = new System.Drawing.Size(73, 17);
             this.smallShipBox.TabIndex = 29;
@@ -222,7 +222,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(221, 431);
+            this.button4.Location = new System.Drawing.Point(218, 428);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(199, 23);
             this.button4.TabIndex = 30;
@@ -233,7 +233,7 @@
             // localversion
             // 
             this.localversion.AutoSize = true;
-            this.localversion.Location = new System.Drawing.Point(223, 385);
+            this.localversion.Location = new System.Drawing.Point(220, 382);
             this.localversion.Name = "localversion";
             this.localversion.Size = new System.Drawing.Size(100, 13);
             this.localversion.TabIndex = 31;
@@ -242,7 +242,7 @@
             // serverversion
             // 
             this.serverversion.AutoSize = true;
-            this.serverversion.Location = new System.Drawing.Point(223, 406);
+            this.serverversion.Location = new System.Drawing.Point(220, 403);
             this.serverversion.Name = "serverversion";
             this.serverversion.Size = new System.Drawing.Size(92, 13);
             this.serverversion.TabIndex = 32;
@@ -250,7 +250,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(426, 431);
+            this.button5.Location = new System.Drawing.Point(423, 428);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(193, 23);
             this.button5.TabIndex = 33;
@@ -261,7 +261,7 @@
             // blueprintBlocks
             // 
             this.blueprintBlocks.FormattingEnabled = true;
-            this.blueprintBlocks.Location = new System.Drawing.Point(426, 25);
+            this.blueprintBlocks.Location = new System.Drawing.Point(423, 22);
             this.blueprintBlocks.Name = "blueprintBlocks";
             this.blueprintBlocks.Size = new System.Drawing.Size(193, 214);
             this.blueprintBlocks.TabIndex = 34;
@@ -269,7 +269,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(822, 431);
+            this.button6.Location = new System.Drawing.Point(819, 428);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(193, 23);
             this.button6.TabIndex = 35;
@@ -280,7 +280,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(426, 8);
+            this.label8.Location = new System.Drawing.Point(423, 5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 13);
             this.label8.TabIndex = 36;
@@ -289,7 +289,7 @@
             // blocks
             // 
             this.blocks.FormattingEnabled = true;
-            this.blocks.Location = new System.Drawing.Point(625, 254);
+            this.blocks.Location = new System.Drawing.Point(622, 251);
             this.blocks.Name = "blocks";
             this.blocks.Size = new System.Drawing.Size(191, 154);
             this.blocks.TabIndex = 37;
@@ -297,14 +297,14 @@
             // blueprintSub
             // 
             this.blueprintSub.FormattingEnabled = true;
-            this.blueprintSub.Location = new System.Drawing.Point(426, 245);
+            this.blueprintSub.Location = new System.Drawing.Point(423, 242);
             this.blueprintSub.Name = "blueprintSub";
             this.blueprintSub.Size = new System.Drawing.Size(193, 184);
             this.blueprintSub.TabIndex = 38;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 470);
+            this.progressBar1.Location = new System.Drawing.Point(9, 467);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(1000, 24);
             this.progressBar1.TabIndex = 39;
@@ -313,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 498);
+            this.ClientSize = new System.Drawing.Size(1020, 496);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.blueprintSub);
             this.Controls.Add(this.blocks);
@@ -342,7 +342,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
-            this.Text = "SE-ML";
+            this.Text = "SEBM";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.blueprintThumb)).EndInit();
             this.ResumeLayout(false);

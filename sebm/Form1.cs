@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 
 
-namespace se_ml
+namespace sebm
 {
     public partial class Form1 : Form
     {

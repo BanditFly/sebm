@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "se-ml", "se-ml\se-ml.csproj", "{E5139ABB-1509-4280-84A3-78271F58F4A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sebm", "sebm\sebm.csproj", "{E5139ABB-1509-4280-84A3-78271F58F4A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{6D63E185-BECA-41FA-87A9-4096D6B22E99}"
 EndProject

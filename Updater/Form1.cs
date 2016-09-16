@@ -21,11 +21,10 @@ namespace Updater
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            File.Delete("SE-ML.exe");
-            downlaodFile("http://s.thatseliyt.de/", "SE-ML.exe", "SE-ML.exe");
-            //File.Move("seml.exe", "SE-ML.exe");
+            File.Delete("sebm.exe");
+            downlaodFile("http://s.thatseliyt.de/", "sebm.exe", "sebm.exe");
             MessageBox.Show("Finished Update!", "Finished!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            System.Diagnostics.Process.Start("SE-ML.exe");
+            System.Diagnostics.Process.Start("sebm.exe");
             this.Close();
         }
 
