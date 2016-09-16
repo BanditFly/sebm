@@ -231,7 +231,7 @@
             this.localversion.Name = "localversion";
             this.localversion.Size = new System.Drawing.Size(100, 13);
             this.localversion.TabIndex = 31;
-            this.localversion.Text = "Local version: 1.0.6";
+            this.localversion.Text = "Local version: 1.0.7";
             // 
             // serverversion
             // 
@@ -241,6 +241,7 @@
             this.serverversion.Size = new System.Drawing.Size(92, 13);
             this.serverversion.TabIndex = 32;
             this.serverversion.Text = "Version on server:";
+            this.serverversion.Click += new System.EventHandler(this.serverversion_Click);
             // 
             // button5
             // 

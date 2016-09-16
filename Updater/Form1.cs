@@ -21,11 +21,19 @@ namespace Updater
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            File.Delete("sebm.exe");
-            downlaodFile("http://s.thatseliyt.de/", "sebm.exe", "sebm.exe");
-            MessageBox.Show("Finished Update!", "Finished!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            System.Diagnostics.Process.Start("sebm.exe");
-            this.Close();
+
+            try
+            {
+                File.Delete("sebm.exe");
+                downlaodFile("http://s.thatseliyt.de/", "sebm.exe", "sebm.exe");
+                MessageBox.Show("Finished Update!", "Finished!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start("sebm.exe");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public static void downlaodFile(string url, string file, string filename)

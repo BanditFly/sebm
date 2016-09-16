@@ -88,7 +88,7 @@ namespace sebm
                     checkedListBox1.Items.Add(info.Directory.ToString().Replace(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SpaceEngineers\\Blueprints\\local\\", ""));
                 }
             }
-            serverversion.Text = si.getsebmversion();
+            serverversion.Text = "Server version: " + si.getsebmversion();
 
             if(Int32.Parse(localversion.Text.Replace("Local version: ", "").Replace(".", "")) < Int32.Parse(serverversion.Text.Replace("Server version: ", "").Replace(".", ""))) { MessageBox.Show("There is an update!" + Environment.NewLine + "Local version: " + localversion.Text.Replace("Local version: ", "") + Environment.NewLine + "Server version: " + serverversion.Text.Replace("Server version: ", ""), "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
@@ -195,10 +195,17 @@ namespace sebm
         private void button4_Click(object sender, EventArgs e)
         {
 
-            tools.downlaodFile("http://s.thatseliyt.de/", "Updater.exe", "semlupdater.exe");
-            MessageBox.Show("Update will start now!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            System.Diagnostics.Process.Start("semlupdater.exe");
-            this.Close();
+            try
+            {
+                tools.downlaodFile("http://s.thatseliyt.de/", "Updater.exe", "semlupdater.exe");
+                MessageBox.Show("Update will start now!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start("semlupdater.exe");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -366,6 +373,11 @@ namespace sebm
                 }
             }
             else MessageBox.Show("Enter a backup path!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void serverversion_Click(object sender, EventArgs e)
+        {
 
         }
     }
